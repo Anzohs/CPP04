@@ -6,7 +6,7 @@
 #    By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/17 21:26:08 by hladeiro          #+#    #+#              #
-#    Updated: 2025/05/17 21:36:56 by hladeiro         ###   ########.fr        #
+#    Updated: 2025/05/17 21:26:10 by hladeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME = Animal
 CXX = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Cat.cpp Dog.cpp Animal.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
+SRC = Cat.cpp Dog.cpp Animal.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 TOTAL_FILES := $(words $(SRC))
 
