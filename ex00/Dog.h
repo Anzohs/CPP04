@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.h                                           :+:      :+:    :+:   */
+/*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 21:25:23 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/17 21:25:25 by hladeiro         ###   ########.fr       */
+/*   Created: 2025/05/17 21:25:34 by hladeiro          #+#    #+#             */
+/*   Updated: 2025/05/17 21:25:35 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "Animal.h"
 
-class Animal{
-	protected:
-		std::string	type;
+class Dog: public Animal {
 	public:
-		Animal(void);
-		~Animal(void);
-		Animal(std::string t);
-		Animal(const Animal& other);
-		Animal& operator=(const Animal& other);
-		void	makeSound(void) const;
-		std::string getType(void) const;
+		Dog(void);
+		Dog(const Dog& other);
+		Dog& operator=(const Dog& other);
+		~Dog(void);
 };
