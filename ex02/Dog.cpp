@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 21:25:50 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/18 00:50:41 by hladeiro         ###   ########.fr       */
+/*   Created: 2025/05/17 21:25:55 by hladeiro          #+#    #+#             */
+/*   Updated: 2025/05/18 17:42:24 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
+#include "Dog.h"
 
-Cat::Cat(void): Animal("Cat"){
-	std::cout << "Cat was created\n";
-};
 
-Cat::Cat(const Cat& other) : Animal(other){
-	std::cout << "Copy constructor called!";
+Dog::Dog() : Animal("Dog"){
+	std::cout << "A Class of a Dog was created\n";
 }
 
-Cat& Cat::operator=(const Cat& other){
+Dog::Dog(const Dog& other) : Animal(other){
+	std::cout << "Copy constructor of Dog was created\n";
+}
+
+Dog& Dog::operator=(const Dog& other){
 	if (this == &other)
-		return(*this);
+		return (*this);
 	Animal::operator=(other);
 	return (*this);
+};
+
+Dog::~Dog(void){
+	std::cout << "Class Dog was destroyed\n";
 }
 
-
-Cat::~Cat(void){
-	std::cout << "Cat was destroyed \n";
-}
+void Dog::makeSound(void) const {std::cout << "Rolf\n";}

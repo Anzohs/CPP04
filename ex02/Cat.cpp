@@ -6,7 +6,7 @@
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 21:25:50 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/18 00:50:41 by hladeiro         ###   ########.fr       */
+/*   Updated: 2025/05/18 17:41:20 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,5 @@ Cat& Cat::operator=(const Cat& other){
 Cat::~Cat(void){
 	std::cout << "Cat was destroyed \n";
 }
+
+void Cat::makeSound(void)const {std::cout << "Miau\n";}

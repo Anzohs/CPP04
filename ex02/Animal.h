@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 21:25:50 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/18 00:50:41 by hladeiro         ###   ########.fr       */
+/*   Created: 2025/05/17 21:25:23 by hladeiro          #+#    #+#             */
+/*   Updated: 2025/05/18 18:47:31 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
+#pragma once
 
-Cat::Cat(void): Animal("Cat"){
-	std::cout << "Cat was created\n";
+#include "Brain.h"
+
+class Animal{
+	protected:
+		std::string	type;
+		Brain *brain;
+		Animal(std::string t);
+	public:
+		virtual	~Animal(void);
+		Animal(const Animal& other);
+		Animal& operator=(const Animal& other);
+		virtual void	makeSound(void) const;
+		std::string getType(void) const;
+		void setIdea(std::string idea);
+		void printIdeas(void) const;
 };
-
-Cat::Cat(const Cat& other) : Animal(other){
-	std::cout << "Copy constructor called!";
-}
-
-Cat& Cat::operator=(const Cat& other){
-	if (this == &other)
-		return(*this);
-	Animal::operator=(other);
-	return (*this);
-}
-
-
-Cat::~Cat(void){
-	std::cout << "Cat was destroyed \n";
-}

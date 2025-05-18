@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 21:25:50 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/18 00:50:41 by hladeiro         ###   ########.fr       */
+/*   Created: 2025/05/17 22:32:20 by hladeiro          #+#    #+#             */
+/*   Updated: 2025/05/17 23:44:59 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
+#pragma once
 
-Cat::Cat(void): Animal("Cat"){
-	std::cout << "Cat was created\n";
+#include <iostream>
+
+
+class Brain{
+	private:
+		std::string ideas[100];
+		int i;
+	public:
+		Brain(void);
+		Brain(const Brain& other);
+		~Brain(void);
+		Brain& operator=(const Brain& other);
+		void	printIdeas(void)const;
+		void	setIdeas(std::string idea);
 };
-
-Cat::Cat(const Cat& other) : Animal(other){
-	std::cout << "Copy constructor called!";
-}
-
-Cat& Cat::operator=(const Cat& other){
-	if (this == &other)
-		return(*this);
-	Animal::operator=(other);
-	return (*this);
-}
-
-
-Cat::~Cat(void){
-	std::cout << "Cat was destroyed \n";
-}

@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 21:25:50 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/18 00:50:41 by hladeiro         ###   ########.fr       */
+/*   Created: 2025/05/17 21:25:34 by hladeiro          #+#    #+#             */
+/*   Updated: 2025/05/18 17:41:39 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
+#pragma once
 
-Cat::Cat(void): Animal("Cat"){
-	std::cout << "Cat was created\n";
+#include "Animal.h"
+
+class Dog: public Animal {
+	public:
+		Dog(void);
+		Dog(const Dog& other);
+		Dog& operator=(const Dog& other);
+		~Dog(void);
+		void makeSound(void) const;
 };
-
-Cat::Cat(const Cat& other) : Animal(other){
-	std::cout << "Copy constructor called!";
-}
-
-Cat& Cat::operator=(const Cat& other){
-	if (this == &other)
-		return(*this);
-	Animal::operator=(other);
-	return (*this);
-}
-
-
-Cat::~Cat(void){
-	std::cout << "Cat was destroyed \n";
-}
