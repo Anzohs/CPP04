@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.h                                           :+:      :+:    :+:   */
+/*   ICharacter.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 21:25:23 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/18 19:50:37 by hladeiro         ###   ########.fr       */
+/*   Created: 2025/05/18 20:15:42 by hladeiro          #+#    #+#             */
+/*   Updated: 2025/05/18 21:19:46 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Brain.h"
+#include "AMateria.h"
 
-class Animal{
+class ICharacter{
 	protected:
-		std::string	type;
-		Brain *brain;
+		std::string name;
 	public:
-		Animal(std::string t);
-		virtual	~Animal(void);
-		Animal(const Animal& other);
-		Animal& operator=(const Animal& other);
-		virtual void	makeSound(void) const = 0;
-		std::string getType(void) const;
-		void setIdea(std::string idea);
-		void printIdeas(void) const;
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };

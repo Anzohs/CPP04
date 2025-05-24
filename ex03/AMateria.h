@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.h                                           :+:      :+:    :+:   */
+/*   AMateria.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 21:25:23 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/18 19:50:37 by hladeiro         ###   ########.fr       */
+/*   Created: 2025/05/18 20:12:42 by hladeiro          #+#    #+#             */
+/*   Updated: 2025/05/18 21:22:30 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Brain.h"
 
-class Animal{
+#include <iostream>
+class ICharacter;
+
+class AMateria {
 	protected:
-		std::string	type;
-		Brain *brain;
+		std::string type;
 	public:
-		Animal(std::string t);
-		virtual	~Animal(void);
-		Animal(const Animal& other);
-		Animal& operator=(const Animal& other);
-		virtual void	makeSound(void) const = 0;
-		std::string getType(void) const;
-		void setIdea(std::string idea);
-		void printIdeas(void) const;
+		AMateria(std::string const& type);
+		AMateria(const AMateria& other);
+		AMateria& operator=(const AMateria& other);
+		virtual ~AMateria(void);
+		std::string const& getType(void) const;
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
