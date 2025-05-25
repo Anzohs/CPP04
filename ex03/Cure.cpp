@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.h                                         :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 20:12:42 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/25 19:15:35 by hladeiro         ###   ########.fr       */
+/*   Created: 2025/05/25 19:06:01 by hladeiro          #+#    #+#             */
+/*   Updated: 2025/05/25 19:22:49 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Cure.h"
+#include "AMateria.h"
 
-#include "ICharacter.h"
-#include <iostream>
+Cure::Cure(void) : AMateria("cure"){}
+Cure::Cure(const Cure& other) : AMateria(other.type){};
 
-class AMateria {
-	protected:
-		std::string type;
-	public:
-		AMateria(std::string const& type);
-		AMateria(const AMateria& other);
-		AMateria& operator=(const AMateria& other);
-		virtual ~AMateria(void);
-		std::string const& getType(void) const;
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
-};
+Cure& Cure::operator=(const Cure& other){
+	(void)other;
+	return (*this);
+}
+
+Cure::~Cure(){}
+
+std::string Cure::getType(void)const {return this->type;}
+
+Cure* Cure::clone(void)const{return new Cure();}

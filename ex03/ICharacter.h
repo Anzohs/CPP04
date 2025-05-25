@@ -6,13 +6,15 @@
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 20:15:42 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/05/18 21:19:46 by hladeiro         ###   ########.fr       */
+/*   Updated: 2025/05/25 19:16:10 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AMateria.h"
+#include <iostream>
+
+class AMateria;
 
 class ICharacter{
 	protected:
